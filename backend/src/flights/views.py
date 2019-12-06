@@ -28,6 +28,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 # APIs
 # Creating APIs without a key
 # /flights/
@@ -41,7 +42,7 @@ def flight_list(request):
 
     # Add one
     if request.method == 'POST':
-        schedule_data = JSONParser().Parsers(request)
+        schedule_data = JSONParser().parse(request)
         schedule_serializer = ScheduleSerializer(data=schedule_data)
 
         # Checking data is valid
@@ -72,7 +73,7 @@ def flight_detail(request, pk):
 
     # Updating one
     if request.method == 'PUT':
-        schedule_data = JSONParser().Parsers(request)
+        schedule_data = JSONParser().parse(request)
         schedule_serializer = ScheduleSerializer(schedule, data=schedule_data)
 
         # Checking data is valid
