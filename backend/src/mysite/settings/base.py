@@ -7,12 +7,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# Api version
+API_VERSION = 'v1'
+
 # Define all applications
 THIRD_PARTY_APPS = [
     'django_extensions',
     # 'webpack_loader',
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
 ]
 
 CUSTOM_MANAGEMENT_APPS = [
@@ -82,6 +86,18 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+## RestFramework settings
+
+# REST_FRAMEWORK = {
+#     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+#     "DEFAULT_AUTHENTICATION_CLASSES": [
+#         "rest_framework.authentication.SessionAuthentication",
+#         "rest_framework_simplejwt.authentication.JWTAuthentication",
+#     ],
+#     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+#     "PAGE_SIZE": 20,
+# }
 
 ## Session Related Settings
 

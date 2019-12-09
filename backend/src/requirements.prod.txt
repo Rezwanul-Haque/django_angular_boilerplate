@@ -27,4 +27,7 @@ djangorestframework==3.10.3
 # Django-cors-header
 django-cors-headers==3.2.0
 
+# Django REST Swagger
+drf-yasg==1.17.0
+
 django-webpack-loader==0.6.0
