@@ -78,20 +78,11 @@ The boilerplate can be improved so please let me know how to improve...
 # Lets talk about project structure of the src(source) folder
 In the src folder there are three apps already created by default
 1. core
-2. pages
-3. accounts
+2. flights - Example REST API app
 
 # Core app
 Django suggest if any custom command has to create for a project it should be on the core > management > command folder.
 Like I created the rename command
-
-# Pages app
-I created the pages app to handle the main pages like index(home), about, contact etc for now.
-Also I created the placeholder pages in the template folder of the pages folder.
-
-# Accounts app
-I created the accounts app to handle the pages like login, register, dashboard etc for now.
-Also I created the placeholder pages in the templates folder of the accounts folder.
 
 # Lets talk about the settings of the project
 src > mysite > settings
@@ -123,3 +114,11 @@ If anyone want to change the project to use the production settings just change 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.development')
 to
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.production')
+
+# Admin Site
+```
+http://localhost:8000/admin
+
+username: admin
+password: roottoor
+```
