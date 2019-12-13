@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { FlightListComponent } from './flight-list/flight-list.component';
+import { FlightCreateComponent } from './flight-create/flight-create.component';
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlightListComponent
+    FlightListComponent,
+    FlightCreateComponent,
+    FlightEditComponent
   ],
   imports: [
     BrowserModule,
