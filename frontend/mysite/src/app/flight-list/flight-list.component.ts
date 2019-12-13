@@ -14,6 +14,7 @@ import { FlightService } from '../services/flight.service';
 export class FlightListComponent implements OnInit {
 
   flights: Observable<Flight[]>;
+  sucess: boolean = false;
   constructor(private flightService: FlightService) { }
 
   ngOnInit() {
@@ -25,11 +26,27 @@ export class FlightListComponent implements OnInit {
   }
 
   deleteFlight(flightId) {
-
+    this.flightService.deleteFlight(flightId).subscribe(
+      data => {
+        this.sucess = true;
+        this.loadFlightData();
+      },
+      error => {
+        console.log("Falied: ", error);
+      }
+    )
   }
 
   deleteAllFlights() {
-
+    this.flightService.deleteAllFlights().subscribe(
+      data => {
+        this.sucess = true;
+        this.loadFlightData();
+      },
+      error => {
+        console.log("Falied: ", error);
+      }
+    )
   }
 
 }

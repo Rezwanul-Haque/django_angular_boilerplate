@@ -14,12 +14,12 @@ export class FlightService {
 
   constructor(private http: HttpClient) { }
 
-  // Get a single flight
+  // GET - a single flight
   getFlight(id: number): Observable<any> {
     return this.http.get(this.endpoint + id);
   }
 
-  // Get all flights
+  // GET - all flights
   getAllFlights(): Observable<any> {
     return this.http.get(this.endpoint);
   }
@@ -32,5 +32,15 @@ export class FlightService {
   // PUT - Update flight
   updateFlight(id: number, flightPayload: any): Observable<object> {
     return this.http.put(this.endpoint + id, flightPayload);
+  }
+
+  // DELETE - a flight
+  deleteFlight(id: number): Observable<any> {
+    return this.http.delete(this.endpoint + id);
+  }
+
+  // DELETE - all flights
+  deleteAllFlights(): Observable<any> {
+    return this.http.delete(this.endpoint);
   }
 }
